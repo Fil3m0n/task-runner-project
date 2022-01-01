@@ -1,0 +1,39 @@
+*, *::before, *::after {
+   box-sizing: border-box; 
+}
+
+body {
+    margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 300;
+    
+}
+
+/* nav styles */
+
+header {
+    background-color: rgba(29, 209, 161,.5);
+    text-align: center;
+    position: fixed;
+    z-index: 9;
+    width: 100%;
+}
+
+nav {
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    left: 0;
+}
+
+nav ul {
+margin: 0;
+padding: 0;
+list-style: none;
+}
+
+nav li {
+
+margin-bottom: 1rem;
+margin-left: 1rem;
+}
