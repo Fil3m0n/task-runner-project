@@ -1,22 +1,88 @@
 *, *::before, *::after {
-   box-sizing: border-box; 
+    box-sizing: border-box; 
 }
 
 body {
     margin: 0;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: 300;
-    
+}
+
+$main-color: rgba(29, 209, 161,.5);
+
+.content {
+    height: 80vh;
+    background-image: url("../images/desk.jpg");
+    background-color: rgb(95, 93, 93);
+    background-blend-mode: multiply;
+    background-size: cover;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    color: white;
+}
+
+.font-top {
+    font-size: 2rem;
+}
+
+.font-bottom {
+    font-size: 4rem;
+    text-transform: capitalize;
 }
 
 /* nav styles */
 
+.logo {
+    color: yellow;
+}
+
 header {
-    background-color: rgba(29, 209, 161,.5);
+    background-color: inherit;
     text-align: center;
     position: fixed;
     z-index: 9;
     width: 100%;
+    
+}
+
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 1rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    display: block;
+    background: white;
+    height: 2px;
+    width: 2em;
+    border-radius: 2px;
+    position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    content: '';
+    position: absolute;
+}
+
+.nav-toggle-label span::before {
+    bottom: 7px;
+}
+
+.nav-toggle-label span::after {
+    top: 7px;
 }
 
 nav {
@@ -24,16 +90,163 @@ nav {
     text-align: left;
     top: 100%;
     left: 0;
+    background: $main-color;
+    width: 100%;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
+
 }
 
 nav ul {
-margin: 0;
-padding: 0;
-list-style: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 nav li {
-
-margin-bottom: 1rem;
-margin-left: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
 }
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: .8rem;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 250ms ease-in-out;
+}
+
+nav a:hover {
+    color: #000;
+}
+
+.nav-toggle:checked ~ nav {
+    transform: scale(1,1);
+}
+
+.nav-toggle:checked ~ nav a {
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms;
+}
+
+button {
+    background-color: #c7b61e; 
+    border: none;
+    color: white;
+    padding: 25px 42px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5%;
+  }
+
+.grid-6 {
+    background: #f1f2f6;
+}
+
+.topp {
+    text-align: center;
+    padding: 2% 0;
+}
+
+.font {
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+
+.font-1 {
+    font-size: 1rem;
+}
+
+.feature-box {
+    text-align: center;
+    padding: 4%;
+}
+
+a {
+    margin-left: 10px;
+}
+
+footer {
+    padding: 3% 15%;
+ }
+
+.container-fluid {
+    padding: 3% 20%;
+}
+
+.card {
+    background-color: #fff;
+}
+
+p {
+    color: #8f8f8f;
+}
+
+.icon {
+    color: #c7b61e;
+}
+
+.icon-b {
+    color: black;
+}
+
+@media  screen and (min-width: 800px) {
+.nav-toggle-label {
+    display: none;
+}
+header {
+    display: grid;
+    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+}
+
+.logo {
+    grid-column: 2 / span 1;
+}
+
+nav {
+    all: unset;
+    grid-column: 3 / 4 ;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+}
+
+nav li {
+    margin-bottom: 0;
+    margin-left: 3rem;
+}
+
+nav ul {
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav a {
+    opacity: 1;
+    position: relative;
+}
+
+nav a::before {
+    content: '';
+    display: block;
+    height: 5px;
+    background: black;
+    position: absolute;
+    top: -.75em;
+    left: 0;
+    right: 0;
+    transform: scale(0, 1);
+    transition: transform ease-in-out 250ms;
+    }
+    
+    nav a:hover::before {
+    transform: scale(1,1);
+    }
+}
+    
+    
+    
