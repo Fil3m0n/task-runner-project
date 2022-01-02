@@ -8,7 +8,9 @@ body {
     font-weight: 300;
 }
 
-$main-color: rgba(29, 209, 161,.5);
+.logo {
+    font-family: 'Licorice', cursive;
+}
 
 .content {
     height: 80vh;
@@ -24,6 +26,7 @@ $main-color: rgba(29, 209, 161,.5);
 
 .font-top {
     font-size: 2rem;
+    font-family: 'Inconsolata', monospace;
 }
 
 .font-bottom {
@@ -90,7 +93,6 @@ nav {
     text-align: left;
     top: 100%;
     left: 0;
-    background: $main-color;
     width: 100%;
     transform: scale(1, 0);
     transform-origin: top;
@@ -110,9 +112,11 @@ nav li {
 }
 
 nav a {
-    color: white;
+    color: grey;
     text-decoration: none;
-    font-size: .8rem;
+    font-size: .9rem;
+    font-family: 'PT Mono', monospace;
+    font-weight: 300;
     text-transform: uppercase;
     opacity: 0;
     transition: opacity 250ms ease-in-out;
@@ -247,6 +251,4 @@ nav a::before {
     transform: scale(1,1);
     }
 }
-    
-    
-    
+  
